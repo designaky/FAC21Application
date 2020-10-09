@@ -1,7 +1,8 @@
-img {
-  width: 300px;
-  transform: translateX(0);
-  transition: 0.4s ease-in-out;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
 }
 
 .images-carousel {
@@ -10,13 +11,23 @@ img {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 300px;
+  width: 500px;
   overflow: hidden;
 }
 
-body {
+.images-carousel img {
+  width: 500px;
+  transform: translateX(0);
+  transition: 0.4s ease-in-out;
+}
+
+.carousel-controller {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: lightblue;
+}
+
+.carousel-controller img {
+  width: 30px;
+  margin: 10px;
+  cursor: pointer;
 }
