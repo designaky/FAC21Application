@@ -7,13 +7,14 @@ const setSlidePosition = (slide, num) => {
   if (slide.style.transform) {
     let some = slide.style.transform.split("(")[1].split(")")[0].split("px")[0];
     some = parseInt(some);
-    console.log(some);
     num = some + num;
   }
-  const newNum = num + "px";
-  console.log(slide.style.transform, "test");
+  const newNum = num;
 
-  slide.style.transform = `translateX(${newNum})`;
+  if (newNum <= 0 && newNum >= -600) {
+    slide.style.transform = `translateX(${newNum + "px"})`;
+    console.log(newNum);
+  }
 };
 
 const testIng = (num) => {
@@ -24,9 +25,9 @@ const testIng = (num) => {
 
 const change = (event) => {
   return event.keyCode === 39
-    ? testIng(300)
-    : event.keyCode === 37
     ? testIng(-300)
+    : event.keyCode === 37
+    ? testIng(300)
     : event.keyCode === 32
     ? testIng(32)
     : null;
