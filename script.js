@@ -9,7 +9,7 @@ const carouselCotntrols = Array.from(
 const slidesLength = slides.length - 1;
 const imagesWith = carouselImages.clientWidth; // slide with so that you to move the images that you use css
 
-console.log(carouselCotntrols[0].id);
+//console.log(carouselCotntrols[0].id);
 
 const setSlidePosition = (slide, num) => {
   if (slide.style.transform) {
