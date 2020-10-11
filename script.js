@@ -50,5 +50,7 @@ carouselCotntrols.forEach((el) => {
   el.addEventListener("click", (e) => {
     if (el.id === "prev") testIng(imagesWith);
     if (el.id === "next") testIng(-imagesWith);
+    if (el.id === "play") console.log("play");
+    if (el.id === "pause") console.log("pause");
   });
 });

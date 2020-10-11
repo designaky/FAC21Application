@@ -2,7 +2,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightblue;
+  /*background: rgb(26, 25, 25);*/
+}
+
+.carousel {
+  border: 1px solid #007adf;
+  padding: 10px;
+  border-radius: 16px;
+  background: linear-gradient(to top, #007adf 0%, #00ecbc 100%);
+  box-shadow: -1rem 1rem 3rem #007adf;
 }
 
 .images-carousel {
@@ -34,5 +42,18 @@ body {
 }
 
 .carousel-controller img:active {
+  transform: scale(0.9);
+}
+
+.carousel-controller svg {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  fill: #00ecbc;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-controller svg:active {
   transform: scale(0.9);
 }
