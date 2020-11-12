@@ -6,8 +6,9 @@ const carouselCotntrols = Array.from(
   document.querySelector(".carousel-controller").children
 );
 
+
 const slidesLength = slides.length - 1;
-const imagesWith = carouselImages.clientWidth; // slide with so that you to move the images that you use css
+const imagesWith = carouselImages.clientWidth ; // slide with so that you to move the images that you use css
 
 //console.log(carouselCotntrols[0].id);
 
@@ -54,3 +55,6 @@ carouselCotntrols.forEach((el) => {
     if (el.id === "pause") console.log("pause");
   });
 });
+
+
+/* if the screen size changes */

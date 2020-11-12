@@ -2,15 +2,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background: rgb(26, 25, 25);*/
+  background: rgb(26, 25, 25);
 }
 
 .carousel {
+  margin-top: 30px;
   border: 1px solid #007adf;
   padding: 10px;
   border-radius: 16px;
   background: linear-gradient(to top, #007adf 0%, #00ecbc 100%);
-  box-shadow: -1rem 1rem 3rem #007adf;
+  box-shadow: -1rem 1rem 3rem #007adf, 1rem -1rem 3rem #007adf;
 }
 
 .images-carousel {
@@ -23,16 +24,23 @@ body {
   overflow: hidden;
 }
 
+/* Width 480px + 20px di margin to equal the carosel width*/
+
 .images-carousel img {
-  width: 500px;
+  width: 480px;
   transform: translateX(0);
-  transition: 0.4s ease-in-out;
+  margin: 5px 10px;
+  transition: 0.5s ease-in-out;
 }
 
 .carousel-controller {
   display: flex;
   justify-content: center;
 }
+
+/*
+ 
+if i work with the images 
 
 .carousel-controller img {
   width: 30px;
@@ -44,6 +52,7 @@ body {
 .carousel-controller img:active {
   transform: scale(0.9);
 }
+*/
 
 .carousel-controller svg {
   height: 30px;
@@ -52,6 +61,7 @@ body {
   fill: #00ecbc;
   transition: 0.3s ease;
   cursor: pointer;
+  stroke: 1px solid black;
 }
 
 .carousel-controller svg:active {
