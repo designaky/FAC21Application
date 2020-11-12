@@ -7,17 +7,11 @@
 }
 
 :root {
-  --bg: #242526;
-  --bg-accent: #484a4d;
-  --text-color: #dadce1;
-  --nav-size: 60px;
-  --border: 1px solid #474a4d;
-  --border-radius: 8px;
-  --speed: 500ms;
+  --bg: rgb(26, 25, 25);
 }
 
 body {
-  background: rgb(26, 25, 25);
+  background: var(--bg);
 }
 
 nav {
@@ -26,6 +20,8 @@ nav {
   align-items: center;
   background-color: salmon;
   height: 6vh;
+  position: fixed;
+  width: 100%;
 }
 
 .nav-bar-dark {
@@ -65,10 +61,11 @@ nav ul {
 }
 
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgb(26, 25, 25);
+}
+
+section {
+  height: 70vh;
+  width: 100%;
 }
 
 .carousel {
