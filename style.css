@@ -19,7 +19,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   background-color: salmon;
-  height: 6vh;
+  height: 8vh;
   position: fixed;
   width: 100%;
 }
@@ -28,10 +28,18 @@ nav {
   background-color: black;
 }
 
+.salute {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 nav h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 nav ul {
@@ -67,7 +75,11 @@ section {
   height: 70vh;
   width: 100%;
 }
-
+#gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .carousel {
   margin-top: 30px;
   border: 1px solid #007adf;

@@ -1,3 +1,5 @@
+//Text selection 
+const welcomeText = document.querySelector('.welcome-text')
 // Images selection
 const carouselImages = document.querySelector(".images-carousel");
 const slides = Array.from(carouselImages.children);
@@ -7,6 +9,27 @@ const carouselCotntrols = Array.from(
 );
 
 
+
+
+
+//Change text
+const welcomeTextChanger = ()=> {
+    
+  const greatings = ['Shalom','Yassou','Habari, Hujambo','Welcome','Ciao','Salut', 'Hola', 'Privet', 'Nǐn hǎo', 'Konnichiwa', 'Ahlan']
+  const saluteIndex = Math.floor(Math.random()*greatings.length)
+
+  //console.log(saluteIndex, greatings.length)
+
+  welcomeText.innerHTML = greatings[saluteIndex]
+}
+
+//text changer
+welcomeText.addEventListener('click', welcomeTextChanger);
+
+
+
+
+// Image carosel 
 const slidesLength = slides.length - 1;
 const imagesWith = carouselImages.clientWidth ; // slide with so that you to move the images that you use css
 
