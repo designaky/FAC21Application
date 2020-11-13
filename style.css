@@ -142,3 +142,15 @@ if i work with the images
 .carousel-controller svg:active {
   transform: scale(0.9);
 }
+
+.sunImage {
+  width: 150px;
+}
+
+.sun {
+  z-index: -1;
+  position: fixed;
+  top: 10vh;
+  left: 90vw;
+  transition: ease;
+}

@@ -1,25 +1,12 @@
+/*Text section*/
 //Text selection 
 const welcomeText = document.querySelector('.welcome-text')
-// Images selection
-const carouselImages = document.querySelector(".images-carousel");
-const slides = Array.from(carouselImages.children);
-//controls selection
-const carouselCotntrols = Array.from(
-  document.querySelector(".carousel-controller").children
-);
-
-
-
-
 
 //Change text
 const welcomeTextChanger = ()=> {
     
   const greatings = ['Shalom','Yassou','Habari, Hujambo','Welcome','Ciao','Salut', 'Hola', 'Privet', 'Nǐn hǎo', 'Konnichiwa', 'Ahlan']
   const saluteIndex = Math.floor(Math.random()*greatings.length)
-
-  //console.log(saluteIndex, greatings.length)
-
   welcomeText.innerHTML = greatings[saluteIndex]
 }
 
@@ -28,6 +15,28 @@ welcomeText.addEventListener('click', welcomeTextChanger);
 
 
 
+//Sun movement 
+const sun = document.querySelector('.sun');
+//scrollSun function
+const scrollSun = ()=>{
+  console.log(window.scrollY/10)
+  sun.style.transform = "translate3d(0," + window.scrollY / 3 + "px, 0)";
+  sun.style.left = `${90-window.scrollY/10}vw`
+}
+//event scroll 
+window.addEventListener('scroll',scrollSun)
+
+
+
+
+/*Images carosel*/
+// Images selection
+const carouselImages = document.querySelector(".images-carousel");
+const slides = Array.from(carouselImages.children);
+//controls selection
+const carouselCotntrols = Array.from(
+  document.querySelector(".carousel-controller").children
+);
 
 // Image carosel 
 const slidesLength = slides.length - 1;
