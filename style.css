@@ -7,7 +7,7 @@
 }
 
 :root {
-  --bg: rgb(26, 25, 25);
+  --bg: rgb(116, 204, 204);
 }
 
 body {
@@ -153,4 +153,16 @@ if i work with the images
   top: 10vh;
   left: 90vw;
   transition: ease;
+}
+
+.paesaggio {
+  z-index: -1;
+  position: fixed;
+  bottom: 0vh;
+  height: 70vh;
+  width: 100%;
+  background-image: url("./images/muntain.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: 100%;
 }

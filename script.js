@@ -20,8 +20,13 @@ const sun = document.querySelector('.sun');
 //scrollSun function
 const scrollSun = ()=>{
   console.log(window.scrollY/10)
-  sun.style.transform = "translate3d(0," + window.scrollY / 3 + "px, 0)";
-  sun.style.left = `${90-window.scrollY/10}vw`
+  console.log(sun.style.transform)
+  sun.style.transform = `translate3d(-${window.scrollY / 0.75}px, ${window.scrollY / 3}px, 0)`;
+  //sun.style.top = `${10+window.scrollY/10}vh`
+  //sun.style.left = `${90-window.scrollY/10}vw`
+  //console.log(sun.style.top, sun.style.left)
+
+  console.log(sun.style.transform)
 }
 //event scroll 
 window.addEventListener('scroll',scrollSun)
