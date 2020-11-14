@@ -1,13 +1,13 @@
 /*Text section*/
 //Text selection 
-const welcomeText = document.querySelector('.welcome-text')
+const welcomeText = document.querySelector('.welcome-text');
 
 //Change text
 const welcomeTextChanger = ()=> {
     
-  const greatings = ['Shalom','Yassou','Habari, Hujambo','Welcome','Ciao','Salut', 'Hola', 'Privet', 'Nǐn hǎo', 'Konnichiwa', 'Ahlan']
-  const saluteIndex = Math.floor(Math.random()*greatings.length)
-  welcomeText.innerHTML = greatings[saluteIndex]
+  const greatings = ['Shalom','Yassou','Habari, Hujambo','Welcome','Ciao','Salut', 'Hola', 'Privet', 'Nǐn hǎo', 'Konnichiwa', 'Ahlan'];
+  const saluteIndex = Math.floor(Math.random()*greatings.length);
+  welcomeText.innerHTML = greatings[saluteIndex];
 }
 
 //text changer
@@ -23,43 +23,41 @@ const scrollSun = ()=>{
   let _docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
   let  _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
 
+  var test = (window.scrollY*_docWidth)/_docHeight
+  const scrollPerY = (window.scrollY)/_docHeight;
+  const scrollPerX = (test)/_docWidth;
 
-  const scrollPerY = (window.scrollY)/_docHeight
-  const scrollPerX = (window.scrollY)/_docWidth
 
 
-  console.log(scrollPerY*100, scrollPerX*100, )
+  console.log(scrollPerY, scrollPerX) // y : x = 1 : x 
  
-// 1 vh = _docHeight/100  sroll:x = 1vh:1px  
-const newY = window.scrollY/(_docHeight/100)
-const newX = window.scrollY/(_docWidth/100)
-const factorX = 1
-// 1 vw = _docWidth/100
-  
 
-  // height:100 = scroll : x  X = scroll*100/height
+  sun.style.transform = `translate3d(-${scrollPerX*_docHeight}px, ${scrollPerY*1000}px, 0)`;
 
-  //sun.style.transform = `translate3d(-${newX*factorX}px, ${newY}px, 0)`;
-  sun.style.transform = `translateY(${newY*factorX}vh)`;
-  sun.style.transform = `translateX(-${newX*factorX}vh)`;
   
   //colorchange BG and sun
   const colorChangeBg = ()=> {
-    return 76-scrollY/10 >= 7 ? 76-scrollY/10 : 7
-  }
+    return 76-scrollY/25 >= 2 ? 76-scrollY/25 : 2
+  };
   const colorChangeSun = ()=> {
     return 56-scrollY/30 >= 16 ? 56-scrollY/30 : 16
-  }
+  };
 
   //colorchange
   document.querySelector('body').style.background = `hsl(193, 100%, ${colorChangeBg()}%)`;
   
-  document.querySelector('.sun').style.background = `hsl(${colorChangeSun()}, 100%, 50%)`;
-  document.querySelector('.sun').style.boxShadow  = `-1rem 1rem 3rem hsl(${colorChangeSun()}, 100%, 50%),
+  sun.style.background = `hsl(${colorChangeSun()}, 100%, 50%)`;
+  sun.style.boxShadow  = `-1rem 1rem 3rem hsl(${colorChangeSun()}, 100%, 50%),
   1rem -1rem 3rem hsl(${colorChangeSun()}, 100%, 50%)`;
 
+  /*Stellar night chaning*/
+  if (window.pageYOffset == window.innerHeight*2){
+    document.querySelector('.paesaggio-stellato').style.opacity = '100%'
+  } else {
+    document.querySelector('.paesaggio-stellato').style.opacity = '0%'
+  }
  
-  console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset,  document.querySelector('body').style.background )
+  console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset, window.innerHeight);
 }
 //event scroll 
 window.addEventListener('scroll',scrollSun)

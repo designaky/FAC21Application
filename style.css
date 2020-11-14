@@ -169,6 +169,16 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.paesaggio-stellato {
+  z-index: -2;
+  position: fixed;
+  bottom: 0vh;
+  height: 100vh;
+  width: 100%;
+  background: rgb(17, 18, 19);
+
+  opacity: 0%;
+}
 
 @media screen and (max-width: 460px) {
   .images-carousel {
