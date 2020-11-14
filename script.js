@@ -41,17 +41,25 @@ const factorX = 1
 
   //sun.style.transform = `translate3d(-${newX*factorX}px, ${newY}px, 0)`;
   sun.style.transform = `translateY(${newY*factorX}vh)`;
-  sun.style.transform = `translateX(${newX*factorX}wh)`;
+  sun.style.transform = `translateX(-${newX*factorX}vh)`;
   
-  //sun.style.top = `${sun.style.top+window.scrollY/10}vh`
-  //sun.style.left = `${sun.style.left-window.scrollY/10}vw`
-  //console.log(sun.style.top, sun.style.left)
+  //colorchange BG and sun
+  const colorChangeBg = ()=> {
+    return 76-scrollY/10 >= 7 ? 76-scrollY/10 : 7
+  }
+  const colorChangeSun = ()=> {
+    return 56-scrollY/30 >= 16 ? 56-scrollY/30 : 16
+  }
 
   //colorchange
-  document.querySelector('body').style.background = `hsl(193, 100%, ${76-scrollY/10}%)`
+  document.querySelector('body').style.background = `hsl(193, 100%, ${colorChangeBg()}%)`;
+  
+  document.querySelector('.sun').style.background = `hsl(${colorChangeSun()}, 100%, 50%)`;
+  document.querySelector('.sun').style.boxShadow  = `-1rem 1rem 3rem hsl(${colorChangeSun()}, 100%, 50%),
+  1rem -1rem 3rem hsl(${colorChangeSun()}, 100%, 50%)`;
 
-
-  console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset)
+ 
+  console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset,  document.querySelector('body').style.background )
 }
 //event scroll 
 window.addEventListener('scroll',scrollSun)

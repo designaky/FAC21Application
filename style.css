@@ -77,6 +77,7 @@ section {
   height: 100vh;
   width: 100%;
 }
+/*
 
 #about {
   background-color: rgba(200, 255, 0, 0.123);
@@ -84,13 +85,13 @@ section {
 #story {
   background-color: rgba(0, 17, 255, 0.123);
 }
-
+*/
 #gallery {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 0, 0, 0.123);
+  /* background-color: rgba(255, 0, 0, 0.123);*/
 }
 .carousel {
   margin-top: 30px;
@@ -149,6 +150,12 @@ section {
   top: 10vh;
   left: 90vw;
   transition: ease;
+  background-color: hsl(56, 100%, 50%);
+  box-shadow: -1rem 1rem 3rem hsl(56, 100%, 50%),
+    1rem -1rem 3rem hsl(56, 100%, 50%);
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
 .paesaggio {
