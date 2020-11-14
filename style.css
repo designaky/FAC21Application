@@ -12,6 +12,7 @@
 
 body {
   background: var(--bg);
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -19,7 +20,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   background-color: salmon;
-  height: 8vh;
+  height: 50px;
   position: fixed;
   width: 100%;
 }
@@ -72,8 +73,9 @@ nav ul {
 }
 
 section {
-  height: 70vh;
+  height: 500px;
   width: 100%;
+  background: rgba(0, 0, 0, 0.158);
 }
 #gallery {
   display: flex;
@@ -95,14 +97,14 @@ section {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 500px;
+  width: 300px;
   overflow: hidden;
 }
 
 /* Width 480px + 20px di margin to equal the carosel width*/
 
 .images-carousel img {
-  width: 480px;
+  width: 280px; /* .images-carousel width - 20px for the margin*/
   transform: translateX(0);
   margin: 5px 10px;
   transition: 0.5s ease-in-out;
@@ -164,5 +166,5 @@ if i work with the images
   background-image: url("./images/muntain.png");
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }

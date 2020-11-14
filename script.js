@@ -19,14 +19,19 @@ welcomeText.addEventListener('click', welcomeTextChanger);
 const sun = document.querySelector('.sun');
 //scrollSun function
 const scrollSun = ()=>{
+
+  let _docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+  let  _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
+
   console.log(window.scrollY/10)
-  console.log(sun.style.transform)
+
   sun.style.transform = `translate3d(-${window.scrollY / 0.75}px, ${window.scrollY / 3}px, 0)`;
+  
   //sun.style.top = `${10+window.scrollY/10}vh`
   //sun.style.left = `${90-window.scrollY/10}vw`
   //console.log(sun.style.top, sun.style.left)
 
-  console.log(sun.style.transform)
+  console.log(_docHeight, _docWidth)
 }
 //event scroll 
 window.addEventListener('scroll',scrollSun)
