@@ -23,15 +23,35 @@ const scrollSun = ()=>{
   let _docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
   let  _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
 
-  console.log(window.scrollY/10)
 
-  sun.style.transform = `translate3d(-${window.scrollY / 0.75}px, ${window.scrollY / 3}px, 0)`;
+  const scrollPerY = (window.scrollY)/_docHeight
+  const scrollPerX = (window.scrollY)/_docWidth
+
+
+  console.log(scrollPerY*100, scrollPerX*100, )
+ 
+// 1 vh = _docHeight/100  sroll:x = 1vh:1px  
+const newY = window.scrollY/(_docHeight/100)
+const newX = window.scrollY/(_docWidth/100)
+const factorX = 1
+// 1 vw = _docWidth/100
   
-  //sun.style.top = `${10+window.scrollY/10}vh`
-  //sun.style.left = `${90-window.scrollY/10}vw`
+
+  // height:100 = scroll : x  X = scroll*100/height
+
+  //sun.style.transform = `translate3d(-${newX*factorX}px, ${newY}px, 0)`;
+  sun.style.transform = `translateY(${newY*factorX}vh)`;
+  sun.style.transform = `translateX(${newX*factorX}wh)`;
+  
+  //sun.style.top = `${sun.style.top+window.scrollY/10}vh`
+  //sun.style.left = `${sun.style.left-window.scrollY/10}vw`
   //console.log(sun.style.top, sun.style.left)
 
-  console.log(_docHeight, _docWidth)
+  //colorchange
+  document.querySelector('body').style.background = `hsl(193, 100%, ${76-scrollY/10}%)`
+
+
+  console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset)
 }
 //event scroll 
 window.addEventListener('scroll',scrollSun)
