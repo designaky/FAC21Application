@@ -75,12 +75,21 @@ nav ul {
 section {
   height: 500px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.158);
 }
+
+#about {
+  background-color: rgba(200, 255, 0, 0.123);
+}
+#story {
+  background-color: rgba(0, 17, 255, 0.123);
+}
+
 #gallery {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 0, 0, 0.123);
 }
 .carousel {
   margin-top: 30px;
@@ -97,14 +106,14 @@ section {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 300px;
+  width: 400px;
   overflow: hidden;
 }
 
 /* Width 480px + 20px di margin to equal the carosel width*/
 
 .images-carousel img {
-  width: 280px; /* .images-carousel width - 20px for the margin*/
+  width: 380px; /* .images-carousel width - 20px for the margin*/
   transform: translateX(0);
   margin: 5px 10px;
   transition: 0.5s ease-in-out;
@@ -114,22 +123,6 @@ section {
   display: flex;
   justify-content: center;
 }
-
-/*
- 
-if i work with the images 
-
-.carousel-controller img {
-  width: 30px;
-  margin: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.carousel-controller img:active {
-  transform: scale(0.9);
-}
-*/
 
 .carousel-controller svg {
   height: 30px;
@@ -168,3 +161,33 @@ if i work with the images
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media screen and (max-width: 460px) {
+  .images-carousel {
+    width: 300px;
+  }
+
+  /* Width 480px + 20px di margin to equal the carosel width*/
+
+  .images-carousel img {
+    width: 280px; /* .images-carousel width - 20px for the margin*/
+  }
+}
+
+/* More code code */
+
+/*
+ 
+if i work with the images 
+
+.carousel-controller img {
+  width: 30px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carousel-controller img:active {
+  transform: scale(0.9);
+}
+*/
