@@ -13,8 +13,6 @@ const welcomeTextChanger = ()=> {
 //text changer
 welcomeText.addEventListener('click', welcomeTextChanger);
 
-
-
 //Sun movement 
 const sun = document.querySelector('.sun');
 const night = document.querySelector('.paesaggio-stellato')

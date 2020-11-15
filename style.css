@@ -172,7 +172,7 @@ section {
 .paesaggio-stellato i {
   position: absolute;
   background-color: #ffffff;
-  box-shadow: -1rem 1rem 3rem #007adf, 1rem -1rem 3rem #007adf;
+
   border-radius: 50%;
   animation: starAnimation linear infinite;
 }
@@ -186,9 +186,13 @@ section {
   90% {
     opacity: 1;
   }
+
+  50% {
+    opacity: 0.5;
+  }
   100% {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-60px);
   }
 }
 
