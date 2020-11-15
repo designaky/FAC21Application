@@ -77,17 +77,8 @@ section {
   height: 100vh;
   width: 100%;
 }
-/*
 
-#about {
-  background-color: rgba(200, 255, 0, 0.123);
-}
-#story {
-  background-color: rgba(0, 17, 255, 0.123);
-}
-*/
 #gallery {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,8 +145,8 @@ section {
   box-shadow: -1rem 1rem 3rem hsl(56, 100%, 50%),
     1rem -1rem 3rem hsl(56, 100%, 50%);
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 130px;
+  width: 130px;
 }
 
 .paesaggio {
@@ -175,9 +166,29 @@ section {
   bottom: 0vh;
   height: 100vh;
   width: 100%;
-  background: rgb(17, 18, 19);
-
   opacity: 0%;
+}
+
+.paesaggio-stellato i {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: starAnimation linear infinite;
+}
+
+@keyframes starAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
 }
 
 @media screen and (max-width: 460px) {

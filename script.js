@@ -17,16 +17,37 @@ welcomeText.addEventListener('click', welcomeTextChanger);
 
 //Sun movement 
 const sun = document.querySelector('.sun');
-//scrollSun function
+const night = document.querySelector('.paesaggio-stellato')
+
+//scrollSun nad night functions
+
+const stars = (_docHeight,_docWidth)=>{
+  let count = 500;
+  let i = 0;
+  while(i<count){
+    let star = document.createElement('i');
+    let x = Math.floor(Math.random() * _docWidth);
+    let y = Math.floor(Math.random() * _docHeight);
+    let duration = Math.random()*10;
+    let size = Math.random()*2;
+
+    star.style.left = x+'px';
+    star.style.top = y+'px';
+    star.style.width = 1+size+'px';
+    star.style.height = 1+size+'px';
+    star.style.animationDuration = 5+duration+'s';
+    night.appendChild(star)
+    i++
+  }
+}
+
 const scrollSun = ()=>{
-
   let _docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
-  let  _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
-
+  let _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
   var test = (window.scrollY*_docWidth)/_docHeight
   const scrollPerY = (window.scrollY)/_docHeight;
   const scrollPerX = (test)/_docWidth;
-
+  
 
 
   console.log(scrollPerY, scrollPerX) // y : x = 1 : x 
@@ -52,9 +73,14 @@ const scrollSun = ()=>{
 
   /*Stellar night chaning*/
   if (window.pageYOffset == window.innerHeight*2){
-    document.querySelector('.paesaggio-stellato').style.opacity = '100%'
+    night.style.opacity = '100%';
+    /* console.log(night.children.length) */
+    stars(_docHeight,_docWidth) ;
   } else {
-    document.querySelector('.paesaggio-stellato').style.opacity = '0%'
+    night.style.opacity = '0%';
+    while (night.firstChild) {
+      night.removeChild(night.lastChild);
+    }
   }
  
   console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset, window.innerHeight);
