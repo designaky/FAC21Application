@@ -21,6 +21,17 @@ const night = document.querySelector('.paesaggio-stellato')
 
 //scrollSun nad night functions
 
+const nightChecker= (_docHeight,_docWidth)=>{
+  if (window.pageYOffset == window.innerHeight*2){
+    night.style.opacity = '100%';
+    starsOff(night);
+    stars(_docHeight,_docWidth) ; 
+  } else {
+    starsOff(night);
+    night.style.opacity = '0%';}
+}
+
+//stars On
 const stars = (_docHeight,_docWidth)=>{
   let count = 500;
   let i = 0;
@@ -39,6 +50,17 @@ const stars = (_docHeight,_docWidth)=>{
     night.appendChild(star)
     i++
   }
+}
+
+//stars Off
+const starsOff = (night)=>{
+  console.log(night.children.length)
+  if (night.children.length>0) {
+    while(night.firstChild){
+      night.removeChild(night.lastChild);
+    }
+  }
+  
 }
 
 const scrollSun = ()=>{
@@ -72,21 +94,20 @@ const scrollSun = ()=>{
   1rem -1rem 3rem hsl(${colorChangeSun()}, 100%, 50%)`;
 
   /*Stellar night chaning*/
-  if (window.pageYOffset == window.innerHeight*2){
-    night.style.opacity = '100%';
-    /* console.log(night.children.length) */
-    stars(_docHeight,_docWidth) ;
-  } else {
-    night.style.opacity = '0%';
-    while (night.firstChild) {
-      night.removeChild(night.lastChild);
-    }
-  }
+  nightChecker(_docHeight,_docWidth)
  
   console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset, window.innerHeight);
 }
+
+//refine
+
+const refineRezise = ()=>{
+  nightChecker(document.body.offsetHeight,document.body.offsetWidth)
+}
+
 //event scroll 
 window.addEventListener('scroll',scrollSun)
+window.addEventListener('resize', refineRezise)
 
 
 
