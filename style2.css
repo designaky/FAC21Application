@@ -1,0 +1,46 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: hsl(73, 71%, 38%);
+}
+
+.tv-container {
+  width: 100%;
+  height: 80vh;
+  background: var(--bg);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.screen {
+  width: 95%;
+  height: 85%;
+  background: rgb(150, 150, 150);
+  margin-top: 20px;
+  border-radius: 25px;
+}
+
+.options {
+  width: 95%;
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tv-logo {
+  min-width: 80%;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+#on-button {
+  height: 30px;
+  cursor: pointer;
+}

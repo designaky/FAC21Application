@@ -9,6 +9,8 @@ const welcomeTextChanger = ()=> {
   const saluteIndex = Math.floor(Math.random()*greatings.length);
   welcomeText.innerHTML = greatings[saluteIndex];
 }
+// Auto Salute
+setInterval(welcomeTextChanger, 1000);
 
 //text changer
 welcomeText.addEventListener('click', welcomeTextChanger);
@@ -20,6 +22,8 @@ const night = document.querySelector('.paesaggio-stellato')
 //scrollSun nad night functions
 
 const nightChecker= (_docHeight,_docWidth)=>{
+  console.log(window.pageYOffset, window.innerHeight*2, window.scrollY)
+  //console.log('--',window.navigator, document.body.scrollHeight)
   if (window.pageYOffset == window.innerHeight*2){
     night.style.opacity = '100%';
     starsOff(night);
@@ -52,7 +56,7 @@ const stars = (_docHeight,_docWidth)=>{
 
 //stars Off
 const starsOff = (night)=>{
-  console.log(night.children.length)
+  /* console.log(night.children.length) */
   if (night.children.length>0) {
     while(night.firstChild){
       night.removeChild(night.lastChild);
@@ -70,7 +74,7 @@ const scrollSun = ()=>{
   
 
 
-  console.log(scrollPerY, scrollPerX) // y : x = 1 : x 
+  console.log(scrollPerY, scrollPerX) 
  
 
   sun.style.transform = `translate3d(-${scrollPerX*_docHeight}px, ${scrollPerY*1000}px, 0)`;
@@ -78,7 +82,7 @@ const scrollSun = ()=>{
   
   //colorchange BG and sun
   const colorChangeBg = ()=> {
-    return 76-scrollY/25 >= 2 ? 76-scrollY/25 : 2
+    return 76-scrollY/25 >= 5 ? 76-scrollY/25 : 5
   };
   const colorChangeSun = ()=> {
     return 56-scrollY/30 >= 16 ? 56-scrollY/30 : 16
@@ -94,7 +98,7 @@ const scrollSun = ()=>{
   /*Stellar night chaning*/
   nightChecker(_docHeight,_docWidth)
  
-  console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset, window.innerHeight);
+ // console.log(_docHeight, _docWidth,document.documentElement.scrollTop,window.pageYOffset, window.innerHeight);
 }
 
 //refine
