@@ -40,17 +40,48 @@
   font-weight: 700;
 }
 
+.welcome-message {
+  color: white;
+  display: Flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 70vh;
+  padding: 30px;
+}
+
+.welcome-message-off {
+  display: none;
+}
+
 .content {
   width: 100%;
   height: 70vh;
   background-color: rgb(255, 255, 255);
   z-index: -1;
   display: none;
+  padding: 5vh 10px 0 10px;
 }
 
 .content-active {
   display: block;
 }
+
+#Home {
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+#AboutMe {
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+#WhyFAC {
+  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+#Game {
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Logo and on button*/
 
 .options {
   width: 95%;
