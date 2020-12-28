@@ -134,6 +134,9 @@
   height: 40%;
   width: 50%;
   background-color: rgb(176, 216, 30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vhs-player-details {
@@ -165,7 +168,8 @@
 
 .vhs h2 {
   writing-mode: vertical-rl;
-
+  width: 100%; /* For the selction*/
+  height: 100%;
   padding-top: 10px;
 }
 
