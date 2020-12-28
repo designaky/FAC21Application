@@ -52,16 +52,19 @@
   font-size: 30px;
 }
 
-.off-button {
+#on-button {
   height: 30px;
   cursor: pointer;
+}
+.on-button {
+  -webkit-filter: drop-shadow(1px 3px 3px rgb(48, 255, 6));
+}
+.off-button {
   -webkit-filter: drop-shadow(1px 3px 3px rgb(255, 6, 6));
   animation: Off 1s infinite;
 }
 
 .on-button {
-  height: 30px;
-  cursor: pointer;
   -webkit-filter: drop-shadow(1px 3px 3px rgb(48, 255, 6));
 }
 
@@ -124,12 +127,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0px;
 }
 
 .vhs-in {
   height: 40%;
   width: 50%;
   background-color: rgb(176, 216, 30);
+}
+
+.vhs-player-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+}
+
+.vhs-player-details div {
+  width: 30px;
+  height: 15px;
+  background-color: black;
 }
 
 .vhs-container {
@@ -140,14 +156,45 @@
 }
 
 .vhs {
-  width: 40px;
+  width: 35px;
   background: rgb(176, 216, 30);
   margin: 0px 3px;
   cursor: pointer;
+  transition: 0.1s linear;
+}
+
+.vhs h2 {
+  writing-mode: vertical-rl;
+
+  padding-top: 10px;
+}
+
+.vhs:hover {
+  width: 40px;
+  background: rgb(216, 67, 30);
 }
 
 .half-two {
   background-color: rgba(128, 128, 128, 0.349);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.half-two div {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.half-two img {
+  height: 50px;
+  transition: 0.1s linear;
+}
+
+.half-two img:hover {
+  height: 60px;
+  -webkit-filter: drop-shadow(1px 3px 3px rgb(48, 255, 6));
 }
 
 @media screen and (max-width: 710px) {
@@ -155,5 +202,17 @@
   .half-two {
     height: 8vh;
     width: 100%;
+  }
+
+  .vhs h2 {
+    font-size: 15px;
+  }
+
+  .half-two img {
+    height: 40px;
+  }
+
+  .half-two img:hover {
+    height: 50px;
   }
 }
