@@ -10,11 +10,13 @@ const tvVhsContent = document.querySelectorAll('.content');
 
 const cards = document.querySelectorAll('.card');
 const newGameBtn = document.querySelector('.new-game-btn');
+const winMessages = document.querySelector('.winMessage');
 
 
 
-let prevPage ='Home';//initial page
-let prevCard = '0-0'; // Initial card status
+let prevPage ='Home';//Initial page
+let prevCard = '0-0';//Initial card status
+let win = 0;
 
 
 
@@ -95,30 +97,56 @@ const cardShuffle = ()=>{
 
 
 const newGame = ()=>{
-    cardShuffle();
+    cardShuffle(); 
+    removeCardToggle(); 
+    prevCard = '0-0';
+    win=0;  
+    winMessages.style.display = 'none';
 };
 
 newGameBtn.addEventListener('click', newGame);
 
 
 const gameOn = (event)=>{
-    let selectedCard = event.target.id;
+    let selectedCard = event.target;
     
     console.log(selectedCard, prevCard);
     if(prevCard == '0-0'){
-        prevCard= event.target.id
+        prevCard= event.target
     } else {
-        if(prevCard.charAt(0) == selectedCard.charAt(0)){
+        if(prevCard.id.charAt(0) == selectedCard.id.charAt(0)){
             console.log('well done')
+            prevCard.classList.toggle('cardCorrect')
+            selectedCard.classList.toggle('cardCorrect')
             prevCard = '0-0'
-
+            win++               
         } else {
             prevCard = '0-0'
         }
     }
-   
+    if(win==3){
+        
+        displayWin();
+        
+    }
+
     
 }
+
+const removeCardToggle = ()=>{
+    cards.forEach(card =>{
+        console.log(card.classList)
+        card.classList.remove('cardCorrect')
+        card.style.display = 'grid'
+        console.log(card.classList)
+    });
+}
+const displayWin = ()=>{
+    cards.forEach(card =>{
+        card.style.display = 'none';
+        winMessages.style.display = 'grid';
+    });
+};
 
 cards.forEach(card =>{
     card.addEventListener('click', (event) =>{

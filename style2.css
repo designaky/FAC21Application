@@ -105,6 +105,11 @@
   pointer-events: none;
 }
 
+.cardCorrect {
+  background-color: rgb(238, 255, 5);
+  pointer-events: none;
+}
+
 .card:active {
   transform: rotateY(180deg);
 }
