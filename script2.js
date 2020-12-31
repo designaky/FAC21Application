@@ -14,6 +14,7 @@ const newGameBtn = document.querySelector('.new-game-btn');
 
 
 let prevPage ='Home';//initial page
+let prevCard = '0-0'; // Initial card status
 
 
 
@@ -87,9 +88,7 @@ vhsContainer.forEach(vhs => {
 const cardShuffle = ()=>{
     //console.log(cards);
     cards.forEach(card =>{
-       
-       card.style.order = 1 * Math.floor(Math.random()*cards.length);
-     
+       card.style.order = 1 * Math.floor(Math.random()*cards.length);    
         //console.log(card.style.order);
     });    
 };
@@ -100,3 +99,30 @@ const newGame = ()=>{
 };
 
 newGameBtn.addEventListener('click', newGame);
+
+
+const gameOn = (event)=>{
+    let selectedCard = event.target.id;
+    
+    console.log(selectedCard, prevCard);
+    if(prevCard == '0-0'){
+        prevCard= event.target.id
+    } else {
+        if(prevCard.charAt(0) == selectedCard.charAt(0)){
+            console.log('well done')
+            prevCard = '0-0'
+
+        } else {
+            prevCard = '0-0'
+        }
+    }
+   
+    
+}
+
+cards.forEach(card =>{
+    card.addEventListener('click', (event) =>{
+        gameOn(event);
+
+    });  
+});
