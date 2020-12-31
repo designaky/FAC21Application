@@ -124,13 +124,9 @@ const gameOn = (event)=>{
             prevCard = '0-0'
         }
     }
-    if(win==3){
-        
-        displayWin();
-        
-    }
-
-    
+    if(win==3){      
+        displayWin();      
+    } 
 }
 
 const removeCardToggle = ()=>{
@@ -140,13 +136,16 @@ const removeCardToggle = ()=>{
         card.style.display = 'grid'
         console.log(card.classList)
     });
-}
+};
+
+
 const displayWin = ()=>{
     cards.forEach(card =>{
         card.style.display = 'none';
         winMessages.style.display = 'grid';
     });
 };
+
 
 cards.forEach(card =>{
     card.addEventListener('click', (event) =>{
