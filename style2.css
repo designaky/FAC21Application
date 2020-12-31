@@ -15,6 +15,8 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  z-index: 300;
+  overflow: auto;
 }
 
 .screen {
@@ -24,11 +26,6 @@
   margin-top: 20px;
   border-radius: 25px;
   overflow: auto;
-  z-index: 10;
-}
-
-.screen-on {
-  background: rgb(172, 169, 169);
   z-index: 10;
 }
 
@@ -42,6 +39,7 @@
 
 .welcome-message {
   color: white;
+  background: rgb(0, 0, 0);
   display: Flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -49,6 +47,14 @@
   width: 100%;
   height: 70vh;
   padding: 30px;
+}
+
+.welcome-message h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.welcome-message h2 {
+  font-size: 30px;
 }
 
 .welcome-message-off {
@@ -65,7 +71,41 @@
 }
 
 .content-active {
-  display: block;
+  display: flex;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 10vw;
+  min-width: 250px;
+  height: 30vh;
+  min-height: 350px;
+  background-color: rgb(255, 30, 0);
+  border-radius: 25px;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  transition: 0.5s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 100px;
+}
+
+.card img {
+  height: 150px;
+}
+
+.card:active {
+  transform: rotateY(180deg);
 }
 
 #Home {
@@ -79,6 +119,9 @@
 }
 #Game {
   background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Logo and on button*/
@@ -256,6 +299,15 @@
 
   .vhs h2 {
     font-size: 15px;
+  }
+
+  .content .card {
+    width: 100px;
+    height: 200px;
+
+    min-width: 100px;
+
+    min-height: 200px;
   }
 
   .half-two img {
