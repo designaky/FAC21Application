@@ -103,15 +103,42 @@
 .card img {
   height: 150px;
   pointer-events: none;
+  display: none;
 }
+
+/*
+.card:hover {
+  border: 10px solid rgb(0, 110, 255);
+  transform: rotateY(180deg);
+}*/
+
+/*
+.card:hover img {
+  display: flex;
+}*/
 
 .cardCorrect {
   background-color: rgb(238, 255, 5);
   pointer-events: none;
+  border: 10px solid rgb(0, 110, 255);
+  transform: rotateY(180deg);
+}
+
+.cardWrong {
+  background-color: rgb(255, 5, 234);
+  pointer-events: none;
+  border: 10px solid rgb(255, 0, 0);
+  transform: rotateY(180deg);
+}
+
+.cardCorrect img {
+  display: flex;
+}
+.cardWrong img {
+  display: flex;
 }
 
 .card:active {
-  transform: rotateY(180deg);
 }
 
 #Home {
