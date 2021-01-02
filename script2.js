@@ -103,7 +103,7 @@ const newGame = ()=>{
     win=0;  
     winMessages.style.display = 'none';
     cardsCon.style.height = '80%';
-    newGameBtn.style.marginBottom ='0';
+    newGameBtn.style.marginTop ='10px';
 };
 
 newGameBtn.addEventListener('click', newGame);
@@ -157,7 +157,7 @@ const removeCardToggle = ()=>{
 const displayWin = ()=>{
     cards.forEach(card =>{
         card.style.display = 'none';
-        cardsCon.style.height= '30%';
+        cardsCon.style.height= '40%';
         winMessages.style.display = 'flex';
     });
 };

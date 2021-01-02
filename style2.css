@@ -6,6 +6,7 @@
 
 :root {
   --bg: hsl(72, 6%, 15%);
+  --pColour: rgb(0, 0, 0);
 }
 
 .tv-container {
@@ -22,7 +23,6 @@
 .screen {
   width: 95%;
   height: 90%;
-  background: rgb(0, 0, 0);
   margin-top: 20px;
   border-radius: 25px;
   overflow: auto;
@@ -39,7 +39,7 @@
 
 .welcome-message {
   color: white;
-  background: rgb(0, 0, 0);
+  background: var(--pColour);
   display: Flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -64,7 +64,6 @@
 .content {
   width: 100%;
   height: 70vh;
-  background-color: rgb(255, 255, 255);
   z-index: -1;
   display: none;
   padding: 5vh 10px 0 10px;
@@ -73,10 +72,10 @@
 .content-active {
   display: flex;
 }
-
+/*
 #Home {
   background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-}
+}*/
 #AboutMe {
   background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
 }
@@ -95,7 +94,7 @@
   grid-template-columns: repeat(3, minmax(100px, 300px));
   grid-template-rows: 1fr 1fr;
   width: 100%;
-  height: 30%;
+  height: 40%;
   align-content: center;
   justify-content: center;
   grid-gap: 1vh 0;
@@ -121,7 +120,8 @@
 
 .card img {
   /*height: 150px;*/
-  width: 100px;
+  width: 20vw;
+  max-width: 200px;
   pointer-events: none;
   display: none;
 }
@@ -159,18 +159,24 @@
 }
 
 .winMessage h2 {
-  font-size: 30px;
+  font-size: 100px;
   font-weight: 700;
+}
+.winMessage p {
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .new-game-btn {
   border: 2px solid red;
   background-color: white;
-  margin-bottom: 0px;
-
-  padding: 10px 30px;
+  width: 10vw;
+  max-width: 300px;
+  min-width: 200px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 25px;
   font-weight: 800;
   color: red;
   transition: 0.2s linear;
@@ -365,7 +371,14 @@
   }
 
   .card img {
-    width: 100px;
+    min-width: 100px;
+  }
+
+  .winMessage h2 {
+    font-size: 50px;
+  }
+  .winMessage p {
+    font-size: 20px;
   }
 
   .vhs-in {
@@ -378,6 +391,10 @@
   .vhs {
     width: 25px;
     padding: 0px 2px;
+  }
+
+  .vhs:hover {
+    width: 30px;
   }
   .vhs h2 {
     font-size: 15px;
