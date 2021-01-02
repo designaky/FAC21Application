@@ -489,3 +489,14 @@
     height: 40px;
   }
 }
+
+@media screen and (max-height: 780px) {
+  .vhs h2 {
+    font-size: 19px;
+  }
+}
+@media screen and (max-height: 616px) {
+  .vhs h2 {
+    font-size: 15px;
+  }
+}
