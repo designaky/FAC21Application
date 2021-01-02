@@ -2,7 +2,8 @@
 const onButton = document.getElementById('on-button');
 const screen = document.querySelector('.screen');
 const vhsContainer = document.querySelectorAll('.vhs');
-const vhsIn = document.querySelector('.vhs-in h2');
+const vhsInTitle = document.querySelector('.vhs-in h2');
+const vhsIn = document.querySelector('.vhs-in');
 //const channelType = document.querySelector('.channel-type');
 const welcomeMessage = document.querySelector ('.welcome-message')
 const tvVhsContent = document.querySelectorAll('.content');
@@ -36,7 +37,7 @@ const onOff = ()=>{
         };
         if(onButton.classList.value == 'on-button' && vhsContent.id == prevPage){
             contectActive(vhsContent); 
-            vhsIn.textContent = vhsContent.childNodes[1].outerText;
+            vhsInTitle.textContent = vhsContent.childNodes[1].outerText;
            
         };
        
@@ -54,11 +55,12 @@ const changeVhs = (event)=>{
     let vhsText = vhsTextClean.replace(" ", "").replace("?",""); // seleccting the inner text for the changing
   
     // Check the same page
-    if(vhsIn.textContent == vhsText){
+    if(vhsInTitle.textContent == vhsText){
         return
     }
     // Changing the VHS
-    vhsIn.textContent = vhsTextClean;
+    vhsInTitle.textContent = vhsTextClean;
+    vhsIn.style.backgroundColor = `var(--${vhsText})`;
     // Changing the Channel Type
 
     // Change the Content in the TV

@@ -1,18 +1,33 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sanchez&display=swap");
 
 :root {
   --bg: hsl(72, 6%, 15%);
   --pColour: rgb(0, 0, 0);
+  --mainFont: "Poppins", sans-serif;
+  --AboutMe: #fdb827;
+  --WhyFAC: #f05454;
+  --Game: #ff7b54;
+  --mainBgColor: #f1f1f1;
+  --mainFontColor: white;
+  --mainCardBack: #ffb26b;
+  --mainCardCorrect: #ffd56b;
+  --mainCardWrong: #f05454;
+  --tvColor: #222831;
+  --mainCabin: #23120b;
+  --cabin: rgb(80, 20, 20);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: var(--mainFont);
 }
 
 .tv-container {
   width: 100%;
   height: 80vh;
-  background: var(--bg);
+  background: var(--tvColor);
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -22,9 +37,9 @@
 
 .screen {
   width: 95%;
-  height: 90%;
+  height: 100%;
   margin-top: 20px;
-  border-radius: 25px;
+  border-radius: 10px;
   overflow: auto;
   z-index: 10;
 }
@@ -34,7 +49,11 @@
   right: 5%;
   top: 5%;
   font-size: 30px;
+  line-height: 0.9;
   font-weight: 700;
+  color: var(--bg);
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  opacity: 0;
 }
 
 .welcome-message {
@@ -68,28 +87,30 @@
   display: none;
 }
 
-/*
-#Home {
-  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-}
-
-.content-active-flex {
-  display: flex;
-  padding: 5vh 10px 0 10px;
-}*/
 .content-active-grid {
   display: grid;
 }
 
 #AboutMe,
 #WhyFAC {
-  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  background: var(--mainBgColor);
   grid-template-columns: auto;
   grid-template-rows: 10vh 1fr 1fr;
 }
 
-#WhyFAC {
-  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+#WhyFAC h1 {
+  background: var(--WhyFAC);
+  color: var(--mainFontColor);
+}
+
+#AboutMe h1 {
+  background-color: var(--AboutMe);
+  color: var(--mainFontColor);
+}
+
+#Game h1 {
+  background-color: var(--Game);
+  color: var(--mainFontColor);
 }
 
 #AboutMe h1,
@@ -97,8 +118,7 @@
 #Game h1 {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  background-color: white;
-  font-size: 30px;
+  font-size: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +130,7 @@
 }
 
 #Game {
-  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  background: var(--mainBgColor);
   grid-template-columns: auto;
   grid-template-rows: 10vh 1fr 1fr 5vh;
 }
@@ -131,7 +151,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 30, 0);
+  background-color: var(--mainCardBack);
 
   width: 75%;
   max-width: 250px;
@@ -162,14 +182,14 @@
 }
 
 .cardCorrect {
-  background-color: rgb(238, 255, 5);
+  background-color: var(--mainCardCorrect);
   pointer-events: none;
-  border: 2px solid rgb(0, 110, 255);
+  border: 2px solid var(--mainCardBack);
   transform: rotateY(180deg);
 }
 
 .cardWrong {
-  background-color: rgb(255, 5, 234);
+  background-color: var(--mainCardWrong);
   pointer-events: none;
   border: 2px solid rgb(255, 0, 0);
   transform: rotateY(180deg);
@@ -207,9 +227,9 @@
   justify-self: center;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
+  border: 2px solid var(--Game);
   background-color: white;
-  margin-top: 3px;
+  margin: 3px 0;
   width: 10vw;
   max-height: 50px;
 
@@ -220,21 +240,21 @@
   border-radius: 5px;
   font-size: 25px;
   font-weight: 800;
-  color: red;
+  color: var(--Game);
   transition: 0.2s linear;
 }
 
 .new-game-btn:hover {
   color: white;
   border-color: white;
-  background-color: red;
+  background-color: var(--Game);
 }
 
 /* Logo and on button*/
 
 .options {
   width: 95%;
-  height: 10%;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -245,6 +265,10 @@
   display: flex;
   justify-content: center;
   font-size: 30px;
+}
+.tv-logo h1 {
+  font-family: "Sanchez", serif;
+  color: var(--mainFontColor);
 }
 
 #on-button {
@@ -282,7 +306,7 @@
 .cabinet-container {
   width: 100%;
   height: 20vh;
-  background-color: rgb(59, 14, 14);
+  background-color: var(--mainCabin);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,7 +319,7 @@
   margin: 20px;
   width: 100%;
   height: 16vh;
-  background-color: rgba(80, 20, 20, 0.576);
+  background-color: var(--cabin);
 }
 
 .half-one,
@@ -316,7 +340,7 @@
 }
 
 .vhs-player {
-  background: grey;
+  background: rgb(43, 38, 38);
   width: 100%;
   height: 70%;
   display: flex;
@@ -328,10 +352,11 @@
 .vhs-in {
   height: 40%;
   width: 50%;
-  background-color: rgb(176, 216, 30);
+  background-color: var(--AboutMe);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--mainFontColor);
 }
 
 .vhs-player-details {
@@ -355,7 +380,7 @@
 
 .vhs {
   width: 35px;
-  background: rgb(176, 216, 30);
+  background: rgb(115, 143, 33);
   margin: 0px 3px;
   cursor: pointer;
   transition: 0.1s linear;
@@ -365,17 +390,24 @@
 .vhs h2 {
   width: 100%; /* For the selction*/
   height: 100%;
-  /*padding: 2px 3px;*/
   text-align: center;
 }
 
-.vhs:hover {
+#vhs-1:hover {
   color: white;
-  background: rgb(216, 67, 30);
+  background-color: var(--AboutMe);
+}
+#vhs-2:hover {
+  color: white;
+  background-color: var(--WhyFAC);
+}
+#vhs-3:hover {
+  color: white;
+  background-color: var(--Game);
 }
 
 .half-two {
-  background-color: rgba(128, 128, 128, 0.349);
+  background-color: rgba(252, 252, 252, 0.349);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -394,7 +426,7 @@
 
 .half-two img:hover {
   height: 60px;
-  -webkit-filter: drop-shadow(1px 3px 3px rgb(48, 255, 6));
+  -webkit-filter: drop-shadow(1px 3px 3px var(--mainBgColor));
 }
 
 @media screen and (max-width: 710px) {
@@ -430,15 +462,12 @@
     padding: 10px;
   }
   .vhs-in h2 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .vhs {
     width: 25px;
     padding: 0px 2px;
-  }
-
-  .vhs:hover {
   }
 
   .vhs h2 {
