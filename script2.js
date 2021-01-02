@@ -9,12 +9,13 @@ const tvVhsContent = document.querySelectorAll('.content');
 
 
 const cards = document.querySelectorAll('.card');
+const cardsCon = document.querySelector('.cards');//fpr changing
 const newGameBtn = document.querySelector('.new-game-btn');
 const winMessages = document.querySelector('.winMessage');
 
 
 
-let prevPage ='Home';//Initial page
+let prevPage ='AboutMe';//Initial page
 let prevCard = '0-0';//Initial card status
 let win = 0;
 
@@ -35,8 +36,8 @@ const onOff = ()=>{
         };
         if(onButton.classList.value == 'on-button' && vhsContent.id == prevPage){
             vhsContent.classList.toggle('content-active');
-            vhsIn.textContent = vhsContent.id;
-            //channelType.textContent = vhsContent.id;
+            vhsIn.textContent = vhsContent.childNodes[1].outerText;
+           
         };
        
     });
@@ -59,7 +60,7 @@ const changeVhs = (event)=>{
     // Changing the VHS
     vhsIn.textContent = vhsTextClean;
     // Changing the Channel Type
-    //channelType.textContent = vhsTextClean;
+
     // Change the Content in the TV
     tvVhsContent.forEach(vhsContent =>{
         //Changing the active page off
@@ -87,10 +88,10 @@ vhsContainer.forEach(vhs => {
 
 
 const cardShuffle = ()=>{
-    //console.log(cards);
+    
     cards.forEach(card =>{
        card.style.order = 1 * Math.floor(Math.random()*cards.length);    
-        //console.log(card.style.order);
+        
     });    
 };
 
@@ -101,6 +102,8 @@ const newGame = ()=>{
     prevCard = '0-0';
     win=0;  
     winMessages.style.display = 'none';
+    cardsCon.style.height = '80%';
+    newGameBtn.style.marginBottom ='0';
 };
 
 newGameBtn.addEventListener('click', newGame);
@@ -109,15 +112,14 @@ newGameBtn.addEventListener('click', newGame);
 const gameOn = (event)=>{
     let selectedCard = event.target;
     
-    //console.log(selectedCard, prevCard);
+   
     if(prevCard == '0-0'){
         
         selectedCard.classList.toggle('cardCorrect');
         prevCard= selectedCard;
     } else {
         if(prevCard.id.charAt(0) == selectedCard.id.charAt(0)){
-            //console.log('well done');
-            //prevCard.classList.toggle('cardCorrect')
+           
             selectedCard.classList.toggle('cardCorrect');
             prevCard = '0-0';
             win++;            
@@ -125,7 +127,7 @@ const gameOn = (event)=>{
             prevCard.classList.toggle('cardCorrect');
             prevCard.classList.toggle('cardWrong');
             selectedCard.classList.toggle('cardWrong');
-           //wait 0.5 sec 
+           //Bug 1 if the click are to fast it go funcky
            setTimeout(()=>{
             prevCard.classList.toggle('cardWrong');
             prevCard = '0-0';
@@ -136,8 +138,8 @@ const gameOn = (event)=>{
             
         }
     }
-    if(win==3){      
-        displayWin();      
+    if(win==3){   
+        setTimeout(displayWin, 1000);                
     };
 };
 
@@ -155,6 +157,7 @@ const removeCardToggle = ()=>{
 const displayWin = ()=>{
     cards.forEach(card =>{
         card.style.display = 'none';
+        cardsCon.style.height= '30%';
         winMessages.style.display = 'flex';
     });
 };

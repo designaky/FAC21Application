@@ -74,34 +74,54 @@
   display: flex;
 }
 
+#Home {
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+#AboutMe {
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+#WhyFAC {
+  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+#Game {
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
+  grid-template-columns: repeat(3, minmax(100px, 300px));
+  grid-template-rows: 1fr 1fr;
   width: 100%;
-  height: 100%;
+  height: 30%;
+  align-content: center;
+  justify-content: center;
+  grid-gap: 1vh 0;
 }
 
 .card {
-  width: 10vw;
-  min-width: 250px;
-  height: 30vh;
-  min-height: 350px;
+  display: none;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(255, 30, 0);
-  border-radius: 25px;
+
+  width: 75%;
+  max-width: 250px;
+  height: 100%;
+  max-height: 350px;
+
+  border-radius: 10px;
   align-self: center;
   justify-self: center;
   cursor: pointer;
   transition: 0.5s linear;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 100px;
 }
 
 .card img {
-  height: 150px;
+  /*height: 150px;*/
+  width: 100px;
   pointer-events: none;
   display: none;
 }
@@ -109,14 +129,14 @@
 .cardCorrect {
   background-color: rgb(238, 255, 5);
   pointer-events: none;
-  border: 10px solid rgb(0, 110, 255);
+  border: 2px solid rgb(0, 110, 255);
   transform: rotateY(180deg);
 }
 
 .cardWrong {
   background-color: rgb(255, 5, 234);
   pointer-events: none;
-  border: 10px solid rgb(255, 0, 0);
+  border: 2px solid rgb(255, 0, 0);
   transform: rotateY(180deg);
 }
 
@@ -134,32 +154,32 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.winMessage h2 {
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .new-game-btn {
-  border: none;
-  margin-bottom: 30px;
+  border: 2px solid red;
+  background-color: white;
+  margin-bottom: 0px;
+
   padding: 10px 30px;
   cursor: pointer;
   border-radius: 5px;
   font-weight: 800;
+  color: red;
+  transition: 0.2s linear;
 }
 
-#Home {
-  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-}
-#AboutMe {
-  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-}
-#WhyFAC {
-  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-}
-#Game {
-  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+.new-game-btn:hover {
+  color: white;
+  border-color: white;
+  background-color: red;
 }
 
 /* Logo and on button*/
@@ -266,6 +286,9 @@
   justify-content: center;
 }
 
+.vhs-in h2 {
+}
+
 .vhs-player-details {
   display: flex;
   justify-content: space-around;
@@ -291,13 +314,14 @@
   margin: 0px 3px;
   cursor: pointer;
   transition: 0.1s linear;
+  writing-mode: vertical-rl;
 }
 
 .vhs h2 {
-  writing-mode: vertical-rl;
   width: 100%; /* For the selction*/
   height: 100%;
-  padding-top: 10px;
+  /*padding: 2px 3px;*/
+  text-align: center;
 }
 
 .vhs:hover {
@@ -331,30 +355,46 @@
 @media screen and (max-width: 710px) {
   .half-one,
   .half-two {
-    height: 8vh;
     width: 100%;
+  }
+  .half-one {
+    height: 10vh;
+  }
+  .half-two {
+    height: 6vh;
   }
 
   .card img {
-    height: 50px;
+    width: 100px;
   }
 
+  .vhs-in {
+    padding: 10px;
+  }
+  .vhs-in h2 {
+    font-size: 19px;
+  }
+
+  .vhs {
+    width: 25px;
+    padding: 0px 2px;
+  }
   .vhs h2 {
     font-size: 15px;
   }
 
   .content .card {
-    width: 100px;
-    height: 200px;
-    min-width: 100px;
-    min-height: 200px;
+    width: 75%;
+    height: 90%;
+    min-width: 90%;
+    min-height: 90%;
   }
 
   .half-two img {
-    height: 40px;
+    height: 30px;
   }
 
   .half-two img:hover {
-    height: 50px;
+    height: 40px;
   }
 }
