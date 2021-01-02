@@ -93,7 +93,7 @@
   justify-self: center;
   cursor: pointer;
   transition: 0.5s linear;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   color: white;
@@ -105,17 +105,6 @@
   pointer-events: none;
   display: none;
 }
-
-/*
-.card:hover {
-  border: 10px solid rgb(0, 110, 255);
-  transform: rotateY(180deg);
-}*/
-
-/*
-.card:hover img {
-  display: flex;
-}*/
 
 .cardCorrect {
   background-color: rgb(238, 255, 5);
@@ -133,12 +122,28 @@
 
 .cardCorrect img {
   display: flex;
+  transform: rotateY(180deg);
 }
 .cardWrong img {
   display: flex;
+  transform: rotateY(180deg);
 }
 
-.card:active {
+.winMessage {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / 4;
+}
+
+.new-game-btn {
+  border: none;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 800;
 }
 
 #Home {
@@ -330,6 +335,10 @@
     width: 100%;
   }
 
+  .card img {
+    height: 50px;
+  }
+
   .vhs h2 {
     font-size: 15px;
   }
@@ -337,9 +346,7 @@
   .content .card {
     width: 100px;
     height: 200px;
-
     min-width: 100px;
-
     min-height: 200px;
   }
 

@@ -81,8 +81,7 @@ vhsContainer.forEach(vhs => {
         //if the television is on
         if (onButton.classList.value == 'on-button') {
             changeVhs(event);
-        };
-        
+        };       
     });   
 });
 
@@ -110,46 +109,45 @@ newGameBtn.addEventListener('click', newGame);
 const gameOn = (event)=>{
     let selectedCard = event.target;
     
-    console.log(selectedCard, prevCard);
+    //console.log(selectedCard, prevCard);
     if(prevCard == '0-0'){
-        prevCard= event.target
-        prevCard.classList.toggle('cardCorrect')
+        
+        selectedCard.classList.toggle('cardCorrect');
+        prevCard= selectedCard;
     } else {
         if(prevCard.id.charAt(0) == selectedCard.id.charAt(0)){
-            console.log('well done')
+            //console.log('well done');
             //prevCard.classList.toggle('cardCorrect')
-            selectedCard.classList.toggle('cardCorrect')
-            prevCard = '0-0'
-            win++               
+            selectedCard.classList.toggle('cardCorrect');
+            prevCard = '0-0';
+            win++;            
         } else {
-            prevCard.classList.toggle('cardCorrect')
-            prevCard.classList.toggle('cardWrong')
-            selectedCard.classList.toggle('cardWrong')
-           //wait 1 sec 
+            prevCard.classList.toggle('cardCorrect');
+            prevCard.classList.toggle('cardWrong');
+            selectedCard.classList.toggle('cardWrong');
+           //wait 0.5 sec 
            setTimeout(()=>{
-            prevCard.classList.toggle('cardWrong')
-            prevCard = '0-0'
-           }, 1200)
+            prevCard.classList.toggle('cardWrong');
+            prevCard = '0-0';
+           }, 500);
            setTimeout(()=>{
-            selectedCard.classList.toggle('cardWrong')
-           }, 1200)
-            
-            
+            selectedCard.classList.toggle('cardWrong');
+           }, 500);    
             
         }
     }
     if(win==3){      
         displayWin();      
-    } 
-}
+    };
+};
 
 const removeCardToggle = ()=>{
     cards.forEach(card =>{
-        console.log(card.classList)
-        card.classList.remove('cardCorrect')
-        card.classList.remove('cardWrong')
-        card.style.display = 'grid'
-        console.log(card.classList)
+        //console.log(card.classList);
+        card.classList.remove('cardCorrect');
+        card.classList.remove('cardWrong');
+        card.style.display = 'grid';
+        //console.log(card.classList);
     });
 };
 
@@ -157,7 +155,7 @@ const removeCardToggle = ()=>{
 const displayWin = ()=>{
     cards.forEach(card =>{
         card.style.display = 'none';
-        winMessages.style.display = 'grid';
+        winMessages.style.display = 'flex';
     });
 };
 
