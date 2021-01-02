@@ -31,11 +31,11 @@ const onOff = ()=>{
     tvVhsContent.forEach(vhsContent =>{
         //Changing the active page off
         if(vhsContent.classList.length > 1){
-            vhsContent.classList.toggle('content-active');
+            contectActive(vhsContent); 
             prevPage = vhsContent.id;
         };
         if(onButton.classList.value == 'on-button' && vhsContent.id == prevPage){
-            vhsContent.classList.toggle('content-active');
+            contectActive(vhsContent); 
             vhsIn.textContent = vhsContent.childNodes[1].outerText;
            
         };
@@ -65,15 +65,25 @@ const changeVhs = (event)=>{
     tvVhsContent.forEach(vhsContent =>{
         //Changing the active page off
         if(vhsContent.classList.length > 1){
-            vhsContent.classList.toggle('content-active');
+            contectActive(vhsContent); 
         } 
         //Changing the new page on
         if (vhsText == vhsContent.id){
-            vhsContent.classList.toggle('content-active');      
+            contectActive(vhsContent);     
         };
         
     });
 
+};
+
+const contectActive = (vhsContent)=>{
+
+    /*if(vhsContent.id == 'Game'){
+        vhsContent.classList.toggle('content-active-flex');
+    } else {
+        vhsContent.classList.toggle('content-active-grid');
+    }*/
+    vhsContent.classList.toggle('content-active-grid');
 };
 
 
@@ -102,8 +112,8 @@ const newGame = ()=>{
     prevCard = '0-0';
     win=0;  
     winMessages.style.display = 'none';
-    cardsCon.style.height = '80%';
-    newGameBtn.style.marginTop ='10px';
+    cardsCon.style.gridRow= '2/ 4';
+    /*newGameBtn.style.marginTop ='10px';*/
 };
 
 newGameBtn.addEventListener('click', newGame);
@@ -157,7 +167,7 @@ const removeCardToggle = ()=>{
 const displayWin = ()=>{
     cards.forEach(card =>{
         card.style.display = 'none';
-        cardsCon.style.height= '40%';
+        cardsCon.style.gridRow= '2/ 3';
         winMessages.style.display = 'flex';
     });
 };

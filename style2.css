@@ -66,38 +66,65 @@
   height: 70vh;
   z-index: -1;
   display: none;
-  padding: 5vh 10px 0 10px;
 }
 
-.content-active {
-  display: flex;
-}
 /*
 #Home {
   background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-}*/
-#AboutMe {
-  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
 }
+
+.content-active-flex {
+  display: flex;
+  padding: 5vh 10px 0 10px;
+}*/
+.content-active-grid {
+  display: grid;
+}
+
+#AboutMe,
+#WhyFAC {
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  grid-template-columns: auto;
+  grid-template-rows: 10vh 1fr 1fr;
+}
+
 #WhyFAC {
   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
+
+#AboutMe h1,
+#WhyFAC h1,
+#Game h1 {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background-color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#AboutMe div,
+#WhyFAC div {
+  grid-row: 2 / -1;
+}
+
 #Game {
   background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: auto;
+  grid-template-rows: 10vh 1fr 1fr 5vh;
 }
 
 .cards {
+  grid-row: 2/ 3;
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 300px));
   grid-template-rows: 1fr 1fr;
   width: 100%;
-  height: 40%;
+  height: 100%;
   align-content: center;
   justify-content: center;
-  grid-gap: 1vh 0;
+  margin-top: 0.5vh;
 }
 
 .card {
@@ -108,7 +135,7 @@
 
   width: 75%;
   max-width: 250px;
-  height: 100%;
+  height: 95%;
   max-height: 350px;
 
   border-radius: 10px;
@@ -118,8 +145,16 @@
   transition: 0.5s linear;
 }
 
+.card:hover {
+  transition: 0.3s linear;
+  border: 3px solid white;
+}
+
+.card:hover {
+  border: 2px solid white;
+}
+
 .card img {
-  /*height: 150px;*/
   width: 20vw;
   max-width: 200px;
   pointer-events: none;
@@ -150,12 +185,12 @@
 }
 
 .winMessage {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
 }
 
 .winMessage h2 {
@@ -168,12 +203,19 @@
 }
 
 .new-game-btn {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
   border: 2px solid red;
   background-color: white;
+  margin-top: 3px;
   width: 10vw;
+  max-height: 50px;
+
   max-width: 300px;
   min-width: 200px;
-  padding: 10px;
+  padding: 2px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 25px;
@@ -292,9 +334,6 @@
   justify-content: center;
 }
 
-.vhs-in h2 {
-}
-
 .vhs-player-details {
   display: flex;
   justify-content: space-around;
@@ -331,7 +370,7 @@
 }
 
 .vhs:hover {
-  width: 40px;
+  color: white;
   background: rgb(216, 67, 30);
 }
 
@@ -381,6 +420,12 @@
     font-size: 20px;
   }
 
+  .new-game-btn {
+    max-width: 150px;
+    min-width: 150px;
+    font-size: 20px;
+  }
+
   .vhs-in {
     padding: 10px;
   }
@@ -394,8 +439,8 @@
   }
 
   .vhs:hover {
-    width: 30px;
   }
+
   .vhs h2 {
     font-size: 15px;
   }
