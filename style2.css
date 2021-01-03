@@ -141,17 +141,84 @@
 }
 
 .content-section-img {
-  /*background-color: red;*/
   height: 100%;
   width: 100%;
 }
 
 .content-section-text {
-  background-color: yellow;
+  /*background-color: yellow;*/
   height: 100%;
   width: 100%;
   overflow: auto;
 }
+
+/*AboutMe*******************************************************************************************************/
+
+#AboutMe .content-section-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  flex-flow: column;
+  overflow: hidden;
+}
+
+.images-carousel img {
+  width: 100%;
+}
+
+.active-image {
+  display: block;
+}
+
+.unactive-image {
+  display: none;
+}
+
+.image-content svg {
+  width: 30px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.images-carousel {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-controller {
+  display: flex;
+  flex-flow: row;
+}
+
+/*WhyFAC**************************************************************************************************************/
+#WhyFAC .content-section-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#WhyFAC .content-section-img img {
+  width: 100%;
+  max-width: 320px;
+}
+
+/*Game**************************************************************************************************************/
 
 .cards {
   grid-row: 2/ 3;
@@ -515,6 +582,11 @@
   }
 }
 
+@media screen and (max-width: 673px) {
+  #WhyFAC .content-section-img img {
+    max-width: 150px;
+  }
+}
 @media screen and (max-height: 780px) {
   .vhs h2 {
     font-size: 19px;
