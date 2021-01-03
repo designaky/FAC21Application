@@ -95,7 +95,13 @@
 #WhyFAC {
   background: var(--mainBgColor);
   grid-template-columns: auto;
-  grid-template-rows: 10vh 1fr 1fr;
+  grid-template-rows: 10vh 1fr;
+}
+
+#Game {
+  background: var(--mainBgColor);
+  grid-template-columns: auto;
+  grid-template-rows: 10vh 1fr 1fr 5vh;
 }
 
 #WhyFAC h1 {
@@ -124,15 +130,26 @@
   justify-content: center;
 }
 
-#AboutMe div,
-#WhyFAC div {
+.content-section {
   grid-row: 2 / -1;
+  padding: 5px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(20vh, 1fr));
+  grid-gap: 10px;
+  overflow: auto;
 }
 
-#Game {
-  background: var(--mainBgColor);
-  grid-template-columns: auto;
-  grid-template-rows: 10vh 1fr 1fr 5vh;
+.content-section-img {
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}
+
+.content-section-text {
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
 }
 
 .cards {
@@ -429,6 +446,12 @@
   -webkit-filter: drop-shadow(1px 3px 3px var(--mainBgColor));
 }
 
+@media screen and (max-width: 780px) {
+  .vhs-in h2 {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 710px) {
   .half-one,
   .half-two {
@@ -461,9 +484,6 @@
   .vhs-in {
     padding: 10px;
   }
-  .vhs-in h2 {
-    font-size: 18px;
-  }
 
   .vhs {
     width: 25px;
@@ -488,6 +508,10 @@
   .half-two img:hover {
     height: 40px;
   }
+
+  .carousel {
+    max-width: 350px;
+  }
 }
 
 @media screen and (max-height: 780px) {
@@ -499,4 +523,48 @@
   .vhs h2 {
     font-size: 15px;
   }
+}
+
+#AboutMe .content-section-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  flex-flow: column;
+  overflow: hidden;
+}
+
+.images-carousel img {
+  width: 100%;
+}
+
+.image-content svg {
+  width: 30px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.images-carousel {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-controller {
+  display: flex;
+  flex-flow: row;
 }
