@@ -181,3 +181,46 @@ cards.forEach(card =>{
 
     });  
 });
+
+
+
+const carouselImgs = document.querySelectorAll('.carousel img');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let imagesPosition = 0;
+
+
+
+
+
+const nextImage = (move)=>{
+    
+    toggleActiveImage(carouselImgs);
+    
+    if (move==='+') {
+        imagesPosition++;  
+    } else {
+        imagesPosition--;
+    }
+         
+    checkLimit();   
+    
+    toggleActiveImage(carouselImgs); 
+    
+};
+
+const checkLimit = () =>{
+   if (imagesPosition > carouselImgs.length-1){
+        imagesPosition = 0;
+    } else if (imagesPosition < 0) {
+        imagesPosition = carouselImgs.length-1;
+    }
+};
+const toggleActiveImage = (carouselImgs) =>{
+    carouselImgs[imagesPosition].classList.toggle('active-image');
+    carouselImgs[imagesPosition].classList.toggle('unactive-image');
+
+};
+
+nextBtn.addEventListener('click', ()=>(nextImage('+')));
+prevBtn.addEventListener('click', ()=>(nextImage('-')));;

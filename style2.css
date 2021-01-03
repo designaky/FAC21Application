@@ -551,6 +551,14 @@
   width: 100%;
 }
 
+.active-image {
+  display: block;
+}
+
+.unactive-image {
+  display: none;
+}
+
 .image-content svg {
   width: 30px;
   padding: 3px;
