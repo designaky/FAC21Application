@@ -111,15 +111,43 @@ vhsContainer.forEach(vhs => {
 const cardShuffle = ()=>{
     
     cards.forEach(card =>{
-       card.style.order = 1 * Math.floor(Math.random()*cards.length);    
+       card.style.order =  Math.floor(Math.random()*cards.length);    
         
     });    
 };
 
 
+const changeImages = ()=>{
+    
+
+    let firstCars = Math.floor(Math.random()*cards.length)
+    let secondCars = Math.floor(Math.random()*cards.length)
+    let thirdCars = Math.floor(Math.random()*cards.length)
+
+
+    cards.forEach(card =>{
+        console.log(card.id) 
+
+        if (card.id.charAt(0) == '1'){
+            card.children[0].src = `./images/slide_images/image0${firstCars}.jpg`
+
+        } else if (card.id.charAt(0) == '2'){
+            card.children[0].src = `./images/slide_images/image0${secondCars}.jpg`
+
+        } else if (card.id.charAt(0) == '3'){
+            card.children[0].src = `./images/slide_images/image0${thirdCars}.jpg`
+
+        }
+         
+     });    
+    
+}
+
+
 const newGame = ()=>{
     cardShuffle(); 
     removeCardToggle(); 
+    changeImages();
     prevCard = '0-0';
     win=0;  
     winMessages.style.display = 'none';
