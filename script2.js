@@ -14,11 +14,20 @@ const cardsCon = document.querySelector('.cards');//fpr changing
 const newGameBtn = document.querySelector('.new-game-btn');
 const winMessages = document.querySelector('.winMessage');
 
+const carouselImgs = document.querySelectorAll('.carousel img');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+
+
 
 
 let prevPage ='AboutMe';//Initial page
 let prevCard = '0-0';//Initial card status
 let win = 0;
+
+let imagesPosition = 0;//Carousel
+
 
 
 
@@ -183,16 +192,7 @@ cards.forEach(card =>{
 });
 
 
-
-const carouselImgs = document.querySelectorAll('.carousel img');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-let imagesPosition = 0;
-
-
-
-
-
+//Carousel******************************************************
 const nextImage = (move)=>{
     
     toggleActiveImage(carouselImgs);

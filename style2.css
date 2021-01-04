@@ -37,7 +37,7 @@
 
 .screen {
   width: 95%;
-  height: 100%;
+  /*height: 100%;*/
   margin-top: 20px;
   border-radius: 10px;
   overflow: auto;
@@ -192,6 +192,14 @@
   width: 30px;
   padding: 3px;
   cursor: pointer;
+  fill: var(--AboutMe);
+  transition: 0.3s ease;
+}
+.image-content svg:hover {
+  fill: var(--WhyFAC);
+}
+.image-content svg:active {
+  transform: scale(0.9);
 }
 
 .images-carousel {
