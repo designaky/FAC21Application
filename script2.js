@@ -126,7 +126,7 @@ const changeImages = ()=>{
 
 
     cards.forEach(card =>{
-        console.log(card.id) 
+      
 
         if (card.id.charAt(0) == '1'){
             card.children[0].src = `./images/slide_images/image0${firstCars}.jpg`
