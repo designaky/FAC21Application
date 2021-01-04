@@ -120,28 +120,25 @@ const cardShuffle = ()=>{
 const changeImages = ()=>{
     
 
-    let firstCars = Math.floor(Math.random()*cards.length)
-    let secondCars = Math.floor(Math.random()*cards.length)
-    let thirdCars = Math.floor(Math.random()*cards.length)
-
-
+    let firstCars = Math.floor(Math.random()*cards.length)+1;
+    
     cards.forEach(card =>{
       
 
         if (card.id.charAt(0) == '1'){
-            card.children[0].src = `./images/slide_images/image0${firstCars}.jpg`
+            card.children[0].src = `./images/slide_images/image0${firstCars}.jpg`;
 
         } else if (card.id.charAt(0) == '2'){
-            card.children[0].src = `./images/slide_images/image0${secondCars}.jpg`
+            card.children[0].src = `./images/slide_images/image0${firstCars-1}.jpg`;
 
         } else if (card.id.charAt(0) == '3'){
-            card.children[0].src = `./images/slide_images/image0${thirdCars}.jpg`
+            card.children[0].src = `./images/slide_images/image0${firstCars+1}.jpg`;
 
-        }
+        };
          
      });    
     
-}
+};
 
 
 const newGame = ()=>{
