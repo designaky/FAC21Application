@@ -120,7 +120,7 @@ const cardShuffle = ()=>{
 const changeImages = ()=>{
     
 
-    let firstCars = Math.floor(Math.random()*cards.length)+1;
+    let firstCars = Math.floor(Math.random()*cards.length)+2;
     
     cards.forEach(card =>{
       
