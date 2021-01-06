@@ -19,6 +19,8 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
 
+const winMessage = document.querySelector('.win-text');
+
 
 
 
@@ -55,6 +57,8 @@ const onOff = ()=>{
 };
 
 onButton.addEventListener('click', onOff);
+
+
 
 
 
@@ -184,8 +188,8 @@ const gameOn = (event)=>{
             
         }
     }
-    if(win==3){   
-        setTimeout(displayWin, 1000);                
+    if(win==3){ 
+        winOnOff()               
     };
 };
 
@@ -215,6 +219,18 @@ cards.forEach(card =>{
 
     });  
 });
+
+
+const winOnOff = ()=>{
+    winMessage.classList.toggle('win-text-on');
+};
+
+winMessage.addEventListener('click', ()=>{
+
+    winOnOff();
+    displayWin();
+    //ZsetTimeout(displayWin, 1000);   
+} );
 
 
 //Carousel******************************************************
