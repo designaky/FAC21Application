@@ -633,13 +633,42 @@
 }
 @media screen and (max-height: 780px) {
   .vhs h2 {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 @media screen and (max-height: 616px) {
   .vhs h2 {
-    font-size: 15px;
+    line-height: 0.5;
   }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext,
+.tooltip:active .tooltiptext {
+  visibility: visible;
+}
+.tooltip:hover,
+.tooltip:active {
+  color: var(--AboutMe);
 }
 
 /*

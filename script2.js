@@ -8,6 +8,8 @@ const vhsIn = document.querySelector('.vhs-in');
 const welcomeMessage = document.querySelector ('.welcome-message')
 const tvVhsContent = document.querySelectorAll('.content');
 
+const spanElement = document.querySelector('span');
+
 
 const cards = document.querySelectorAll('.card');
 const cardsCon = document.querySelector('.cards');//fpr changing
@@ -144,7 +146,7 @@ const changeImages = ()=>{
     
 };
 
-
+/*Game******************************************************************************************************/
 const newGame = ()=>{
     cardShuffle(); 
     removeCardToggle(); 
@@ -265,3 +267,10 @@ const toggleActiveImage = (carouselImgs) =>{
 
 nextBtn.addEventListener('click', ()=>(nextImage('+')));
 prevBtn.addEventListener('click', ()=>(nextImage('-')));;
+
+
+/*Span hover*********************************************************************************************/
+
+spanElement.addEventListener('click',()=>{
+    
+})
