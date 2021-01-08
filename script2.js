@@ -114,6 +114,21 @@ vhsContainer.forEach(vhs => {
 });
 
 
+
+
+/*Game******************************************************************************************************/
+const newGame = ()=>{
+    cardShuffle(); 
+    removeCardToggle(); 
+    changeImages();
+    prevCard = '0-0';
+    win=0;  
+    winMessages.style.display = 'none';
+    cardsCon.style.gridRow= '2/ 4';
+    /*newGameBtn.style.marginTop ='10px';*/
+};
+
+
 const cardShuffle = ()=>{
     
     cards.forEach(card =>{
@@ -122,11 +137,23 @@ const cardShuffle = ()=>{
     });    
 };
 
+const removeCardToggle = ()=>{
+    cards.forEach(card =>{
+        //console.log(card.classList);
+        card.classList.remove('cardCorrect');
+        card.classList.remove('cardWrong');
+        card.style.display = 'grid';
+        //console.log(card.classList);
+    });
+};
+
 
 const changeImages = ()=>{
     
 
-    let firstCars = Math.floor(Math.random()*cards.length)+2;
+    let firstCars = Math.floor(Math.random()* carouselImgs.length);
+    firstCars = firstCars > 1 ? firstCars : 2;
+    
     
     cards.forEach(card =>{
       
@@ -145,20 +172,6 @@ const changeImages = ()=>{
      });    
     
 };
-
-/*Game******************************************************************************************************/
-const newGame = ()=>{
-    cardShuffle(); 
-    removeCardToggle(); 
-    changeImages();
-    prevCard = '0-0';
-    win=0;  
-    winMessages.style.display = 'none';
-    cardsCon.style.gridRow= '2/ 4';
-    /*newGameBtn.style.marginTop ='10px';*/
-};
-
-newGameBtn.addEventListener('click', newGame);
 
 
 const gameOn = (event)=>{
@@ -195,16 +208,6 @@ const gameOn = (event)=>{
     };
 };
 
-const removeCardToggle = ()=>{
-    cards.forEach(card =>{
-        //console.log(card.classList);
-        card.classList.remove('cardCorrect');
-        card.classList.remove('cardWrong');
-        card.style.display = 'grid';
-        //console.log(card.classList);
-    });
-};
-
 
 const displayWin = ()=>{
     cards.forEach(card =>{
@@ -233,6 +236,10 @@ winMessage.addEventListener('click', ()=>{
     displayWin();
     //ZsetTimeout(displayWin, 1000);   
 } );
+
+newGameBtn.addEventListener('click', newGame);
+
+
 
 
 //Carousel******************************************************

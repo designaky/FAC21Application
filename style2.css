@@ -642,17 +642,17 @@
   }
 }
 
-.tooltip {
+.tip {
   position: relative;
   display: inline-block;
   cursor: pointer;
   font-weight: 700;
 }
 
-.tooltip .tooltiptext {
+.tip .tip-text {
   visibility: hidden;
   width: 120px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.445);
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -662,12 +662,12 @@
   z-index: 1;
 }
 
-.tooltip:hover .tooltiptext,
-.tooltip:active .tooltiptext {
+.tip:hover .tip-text,
+.tip:active .tip-text {
   visibility: visible;
 }
-.tooltip:hover,
-.tooltip:active {
+.tip:hover,
+.tip:active {
   color: var(--AboutMe);
 }
 
