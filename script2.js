@@ -28,7 +28,6 @@ const winMessage = document.querySelector('.win-text');
 let prevPage ='AboutMe';//Initial page
 let prevCard = '0-0';//Initial card status
 let win = 0;
-
 let imagesPosition = 0;//Carousel
 
 
@@ -49,7 +48,8 @@ const onOff = ()=>{
         };
         if(onButton.classList.value == 'on-button' && vhsContent.id == prevPage){
             contectActive(vhsContent); 
-            vhsInTitle.textContent = vhsContent.childNodes[1].outerText;
+            vhsInTitle.textContent = vhsContent.childNodes[1].innerText ;
+            vhsIn.style.boxShadow = `var(--${prevPage}Glow)`;
            
         };
        
@@ -74,6 +74,7 @@ const changeVhs = (event)=>{
     // Changing the VHS
     vhsInTitle.textContent = vhsTextClean;
     vhsIn.style.backgroundColor = `var(--${vhsText})`;
+    vhsIn.style.boxShadow = `var(--${vhsText}Glow)`;
     // Changing the Channel Type
 
     // Change the Content in the TV
