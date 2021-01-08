@@ -8,7 +8,6 @@ const vhsIn = document.querySelector('.vhs-in');
 const welcomeMessage = document.querySelector ('.welcome-message')
 const tvVhsContent = document.querySelectorAll('.content');
 
-const spanElement = document.querySelector('span');
 
 
 const cards = document.querySelectorAll('.card');
@@ -35,7 +34,7 @@ let imagesPosition = 0;//Carousel
 
 
 
-// On and off button
+// On and off button*******************************************************************************************************
 const onOff = ()=>{
     onButton.classList.toggle('off-button');
     onButton.classList.toggle('on-button');
@@ -62,8 +61,7 @@ onButton.addEventListener('click', onOff);
 
 
 
-
-
+//VHS***********************************************************************************************************************
 // Chose VHS 
 const changeVhs = (event)=>{
     let vhsTextClean = event.target.textContent
@@ -116,7 +114,7 @@ vhsContainer.forEach(vhs => {
 
 
 
-/*Game******************************************************************************************************/
+//Game******************************************************************************************************/
 const newGame = ()=>{
     cardShuffle(); 
     removeCardToggle(); 
@@ -276,8 +274,3 @@ nextBtn.addEventListener('click', ()=>(nextImage('+')));
 prevBtn.addEventListener('click', ()=>(nextImage('-')));;
 
 
-/*Span hover*********************************************************************************************/
-
-spanElement.addEventListener('click',()=>{
-    
-})

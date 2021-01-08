@@ -5,8 +5,20 @@
   --pColour: rgb(0, 0, 0);
   --mainFont: "Poppins", sans-serif;
   --AboutMe: #fdb827;
+  --AboutMeGlow: inset 0 0 5px #fff, inset 20px 0 80px var(--AboutMe),
+    inset -20px 0 80px var(--AboutMe), inset 20px 0 300px var(--AboutMe),
+    inset -20px 0 300px var(--AboutMe), -10px 0 80px var(--AboutMe),
+    10px 0 80px var(--AboutMe);
   --WhyFAC: #f05454;
+  --WhyFACGlow: inset 0 0 5px #fff, inset 20px 0 80px var(--WhyFAC),
+    inset -20px 0 80px var(--WhyFAC), inset 20px 0 300px var(--WhyFAC),
+    inset -20px 0 300px var(--WhyFAC), -10px 0 80px var(--WhyFAC),
+    10px 0 80px var(--WhyFAC);
   --Game: #ff7b54;
+  --GameGlow: inset 0 0 5px #fff, inset 20px 0 80px var(--Game),
+    inset -20px 0 80px var(--Game), inset 20px 0 300px var(--Game),
+    inset -20px 0 300px var(--Game), -10px 0 80px var(--Game),
+    10px 0 80px var(--Game);
   --mainBgColor: #f1f1f1;
   --mainFontColor: white;
   --mainCardBack: #ffb26b;
@@ -394,6 +406,7 @@
   justify-content: center;
   font-size: 30px;
 }
+
 .tv-logo h1 {
   font-family: "Sanchez", serif;
   color: var(--mainFontColor);
@@ -509,7 +522,6 @@
 
 .vhs {
   width: 35px;
-  background: rgb(115, 143, 33);
   margin: 0px 3px;
   cursor: pointer;
   transition: 0.1s linear;
@@ -522,17 +534,27 @@
   text-align: center;
 }
 
+#vhs-1 {
+  background-color: var(--AboutMe);
+}
 #vhs-1:hover {
   color: white;
-  background-color: var(--AboutMe);
+  box-shadow: var(--AboutMeGlow);
+}
+
+#vhs-2 {
+  background-color: var(--WhyFAC);
 }
 #vhs-2:hover {
   color: white;
-  background-color: var(--WhyFAC);
+  box-shadow: var(--WhyFACGlow);
+}
+#vhs-3 {
+  background-color: var(--Game);
 }
 #vhs-3:hover {
   color: white;
-  background-color: var(--Game);
+  box-shadow: var(--GameGlow);
 }
 
 .half-two {
