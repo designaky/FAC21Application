@@ -146,7 +146,6 @@
   padding: 5px 15px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(20vh, 1fr));
   grid-gap: 10px;
   overflow: auto;
 }
