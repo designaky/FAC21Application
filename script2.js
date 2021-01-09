@@ -275,3 +275,11 @@ nextBtn.addEventListener('click', ()=>(nextImage('+')));
 prevBtn.addEventListener('click', ()=>(nextImage('-')));;
 
 
+const whyFacSelect = document.querySelectorAll('.special-why');
+
+
+whyFacSelect.forEach(reason =>{
+    reason.addEventListener('click', ()=>{
+        reason.childNodes[3].classList.toggle('why-full-On')
+    });
+});

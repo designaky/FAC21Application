@@ -19,7 +19,7 @@
     inset -20px 0 80px var(--Game), inset 20px 0 300px var(--Game),
     inset -20px 0 300px var(--Game), -10px 0 80px var(--Game),
     10px 0 80px var(--Game);
-  --mainBgColor: #f1f1f1;
+  --mainBgColor: floralwhite;
   --mainFontColor: white;
   --mainCardBack: #ffb26b;
   --mainCardCorrect: #ffd56b;
@@ -202,10 +202,10 @@
   margin-bottom: 20px;
 }
 
-article h2 {
+#AboutMe article h2 {
   margin: 5px 0;
 }
-article h3 {
+#AboutMe article h3 {
   margin: 5px 20px 20px 20px;
   text-align: justify;
   font-style: italic;
@@ -214,11 +214,6 @@ article h3 {
   background-color: rgba(214, 205, 205, 0.521);
   border: 1px solid rgba(75, 75, 75, 0.507);
 }
-
-/*
-ul li::marker {
-  color: var(--AboutMe);
-}*/
 
 #AboutMe .content-section-img {
   display: flex;
@@ -293,6 +288,68 @@ ul li::marker {
 #WhyFAC .content-section-img img {
   width: 100%;
   max-width: 320px;
+}
+#WhyFAC article h3 {
+  margin: 5px 20px 20px 20px;
+  text-align: justify;
+  font-style: italic;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(214, 205, 205, 0.521);
+  border: 1px solid rgba(75, 75, 75, 0.507);
+}
+#WhyFAC article p {
+  text-align: justify;
+}
+
+#WhyFAC article .why-fac-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px 30px;
+  padding-inline-start: 0px;
+  min-height: 100px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+#WhyFAC article .why-fac-ul img {
+  width: 100px;
+}
+
+.special-why {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 6px;
+}
+
+.special-why h4 {
+  list-style: none;
+  cursor: pointer;
+  background-color: var(--AboutMe);
+  padding: 5px;
+  max-width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 6px 6px 3px #aaaaaa;
+}
+
+.why-full {
+  background-color: rgb(250, 250, 250);
+  padding: 10px 5px;
+  box-shadow: 6px 6px 3px #aaaaaa;
+  display: none;
+  transition: 0.5s linear;
+}
+.why-full-On {
+  display: block;
+}
+
+.special-why h4:hover .special-why div,
+.special-why h4:active .special-why div {
+}
+#WhyFAC article {
+  margin-bottom: 20px;
 }
 
 /*Game**************************************************************************************************************/
