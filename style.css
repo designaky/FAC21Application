@@ -27,6 +27,7 @@
   --tvColor: #222831;
   --mainCabin: #23120b;
   --cabin: rgb(80, 20, 20);
+  --fontText1: calc(10px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 * {
@@ -681,6 +682,7 @@
   width: 100%; /* For the selction*/
   height: 100%;
   text-align: center;
+  font-size: var(--fontText1);
 }
 
 #vhs-1 {
@@ -779,9 +781,9 @@
     padding: 0px 2px;
   }
 
-  .vhs h2 {
+  /* .vhs h2 {
     font-size: 15px;
-  }
+  } */
 
   .content .card {
     width: 75%;
@@ -809,17 +811,17 @@
   }
 }
 @media screen and (max-height: 780px) {
-  .vhs h2 {
+  /* .vhs h2 {
     font-size: 15px;
-  }
+  } */
   .images-carousel img {
     max-height: 300px;
   }
 }
 @media screen and (max-height: 616px) {
-  .vhs h2 {
+  /* .vhs h2 {
     line-height: 0.5;
-  }
+  } */
   .images-carousel img {
     max-height: 200px;
   }
