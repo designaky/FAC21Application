@@ -371,9 +371,6 @@
   display: block;
 }
 
-.special-why h4:hover .special-why div,
-.special-why h4:active .special-why div {
-}
 #WhyFAC article {
   margin-bottom: 20px;
 }
