@@ -8,7 +8,7 @@ const vhsIn = document.querySelector('.vhs-in');
 const welcomeMessage = document.querySelector ('.welcome-message')
 const tvVhsContent = document.querySelectorAll('.content');
 
-
+const  aboutMe = document.getElementById('AboutMe');
 
 const cards = document.querySelectorAll('.card');
 const cardsCon = document.querySelector('.cards');//fpr changing
@@ -283,3 +283,21 @@ whyFacSelect.forEach(reason =>{
         reason.childNodes[3].classList.toggle('why-full-On')
     });
 });
+
+
+const logKey = (e)=> {
+
+    if(aboutMe.classList.length<2) return
+    switch (e.keyCode) {
+        case 37:
+            nextImage('-');
+            break;
+        case 39:
+            nextImage('+');
+            break;               
+    };
+
+};
+
+document.addEventListener('keydown', logKey);
+
