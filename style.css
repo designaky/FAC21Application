@@ -116,6 +116,7 @@
   grid-template-columns: auto;
   grid-template-rows: 10vh 1fr 1fr 5vh;
   position: relative;
+  overflow-x: auto;
   z-index: 20;
 }
 
